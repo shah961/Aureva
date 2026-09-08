@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AUREVAN — Time, Refined. | Swiss-Inspired Luxury Watches</title>
+<meta name="description" content="AUREVAN crafts precision timepieces for moments that deserve to be remembered. Explore the collection — Automatic, Chronograph, Classic and Limited Edition watches, with Cash on Delivery available.">
+<meta name="theme-color" content="#0A0A0B">
+
+<!-- Open Graph -->
+<meta property="og:title" content="AUREVAN — Time, Refined.">
+<meta property="og:description" content="Precision engineered for moments that deserve to be remembered. Discover the AUREVAN collection.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=1200&q=80">
+<link rel="canonical" href="https://www.aurevan.example/">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<header class="nav" id="siteNav">
+  <div class="nav__inner">
+    <a href="#top" class="nav__mark" aria-label="AUREVAN — Home">
+      <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="13" cy="13" r="11.5" stroke="currentColor" stroke-width="1"/>
+        <line x1="13" y1="13" x2="13" y2="6.5" stroke="currentColor" stroke-width="1"/>
+        <line x1="13" y1="13" x2="17.5" y2="15" stroke="currentColor" stroke-width="1"/>
+      </svg>
+      <span>AUREVAN</span>
+    </a>
+
+    <nav class="nav__links" aria-label="Primary">
+      <a href="#top">Home</a>
+      <a href="#collection">Collection</a>
+      <a href="#heritage">Heritage</a>
+      <a href="#craftsmanship">Craftsmanship</a>
+      <a href="#journal">Journal</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="nav__actions">
+      <button class="nav__bag" id="bagBtn" aria-label="Shopping bag">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M6 8h12l-1 12.5a1.5 1.5 0 0 1-1.5 1.5h-7A1.5 1.5 0 0 1 7 20.5L6 8Z" stroke="currentColor" stroke-width="1.3"/>
+          <path d="M9 8V6a3 3 0 0 1 6 0v2" stroke="currentColor" stroke-width="1.3"/>
+        </svg>
+      </button>
+      <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+  <div class="nav__mobile" id="navMobile">
+    <a href="#top">Home</a>
+    <a href="#collection">Collection</a>
+    <a href="#heritage">Heritage</a>
+    <a href="#craftsmanship">Craftsmanship</a>
+    <a href="#journal">Journal</a>
+    <a href="#contact">Contact</a>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="top">
+  <div class="hero__swiper swiper" id="heroSwiper">
+    <div class="swiper-wrapper" id="heroSlides"></div>
+  </div>
+  <div class="hero__scrim"></div>
+
+  <div class="hero__content">
+    <p class="hero__eyebrow">Swiss-Inspired Horology</p>
+    <h1 class="hero__title">AUREVAN</h1>
+    <p class="hero__tagline">Time, Refined.</p>
+    <p class="hero__support">Precision engineered for moments that deserve to be remembered.</p>
+    <div class="hero__ctas">
+      <a href="#collection" class="btn btn--primary">Explore Watches</a>
+      <a href="#heritage" class="btn btn--ghost">Discover AUREVAN</a>
+    </div>
+  </div>
+
+  <div class="hero__pagination" id="heroPagination"></div>
+  <div class="hero__scrolldown" aria-hidden="true"><span></span></div>
+</section>
+
+<!-- ================= COLLECTION ================= -->
+<section class="collection" id="collection">
+  <div class="section-head">
+    <h2>The Collection</h2>
+    <p>Eight expressions of one philosophy — that a watch should be built to outlast the moment it marks.</p>
+  </div>
+
+  <div class="filters" id="filters" role="tablist" aria-label="Filter watches by category">
+    <button class="filter is-active" data-filter="all" role="tab" aria-selected="true">All</button>
+    <button class="filter" data-filter="Automatic" role="tab" aria-selected="false">Automatic</button>
+    <button class="filter" data-filter="Classic" role="tab" aria-selected="false">Classic</button>
+    <button class="filter" data-filter="Chronograph" role="tab" aria-selected="false">Chronograph</button>
+    <button class="filter" data-filter="Sport" role="tab" aria-selected="false">Sport</button>
+    <button class="filter" data-filter="Limited Edition" role="tab" aria-selected="false">Limited Edition</button>
+  </div>
+
+  <div class="collection__grid" id="collectionGrid"></div>
+</section>
+
+<!-- ================= FEATURED WATCH ================= -->
+<section class="featured" id="featured">
+  <div class="featured__media">
+    <img id="featuredImg" src="" alt="">
+  </div>
+  <div class="featured__panel">
+    <p class="featured__eyebrow" id="featuredCollection"></p>
+    <h2 id="featuredName"></h2>
+    <p class="featured__desc" id="featuredDesc"></p>
+    <p class="featured__price" id="featuredPrice"></p>
+    <button class="btn btn--primary" id="featuredCta">Discover the Model</button>
+  </div>
+</section>
+
+<!-- ================= CRAFTSMANSHIP ================= -->
+<section class="craft" id="craftsmanship">
+  <div class="section-head section-head--light">
+    <h2>Built Around Precision.</h2>
+    <p>Every AUREVAN passes through four disciplines before it ever reaches a wrist.</p>
+  </div>
+
+  <div class="craft__list">
+    <article class="craft__item">
+      <span class="craft__num">01</span>
+      <div class="craft__media"><img src="https://images.unsplash.com/photo-1509048191080-d2984bad6ae5?auto=format&fit=crop&w=900&q=80" alt="Watch design sketches and dial layout on a designer's desk" loading="lazy"></div>
+      <div class="craft__text">
+        <h3>Design</h3>
+        <p>Each case begins on paper — proportion, weight and balance debated long before a single component is machined.</p>
+      </div>
+    </article>
+    <article class="craft__item">
+      <span class="craft__num">02</span>
+      <div class="craft__media"><img src="https://images.unsplash.com/photo-1434056886845-dac89ffe9b56?auto=format&fit=crop&w=900&q=80" alt="Precision engineering of watch movement components" loading="lazy"></div>
+      <div class="craft__text">
+        <h3>Engineering</h3>
+        <p>Movements are calibrated to fractions of a second, with tolerances that most machines are never asked to hold.</p>
+      </div>
+    </article>
+    <article class="craft__item">
+      <span class="craft__num">03</span>
+      <div class="craft__media"><img src="https://images.unsplash.com/photo-1548171915-e79a380a2a4b?auto=format&fit=crop&w=900&q=80" alt="Watchmaker hand-assembling a timepiece" loading="lazy"></div>
+      <div class="craft__text">
+        <h3>Assembly</h3>
+        <p>Built by hand, one watch at a time, by people who are permitted to slow down until the fit is exact.</p>
+      </div>
+    </article>
+    <article class="craft__item">
+      <span class="craft__num">04</span>
+      <div class="craft__media"><img src="https://images.unsplash.com/photo-1533139502658-0198f920d8e8?auto=format&fit=crop&w=900&q=80" alt="Quality control inspection of a finished watch" loading="lazy"></div>
+      <div class="craft__text">
+        <h3>Quality Control</h3>
+        <p>No watch leaves the bench without a full inspection of timing, water resistance and finish, twice over.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ================= HERITAGE ================= -->
+<section class="heritage" id="heritage">
+  <div class="heritage__media">
+    <img src="https://images.unsplash.com/photo-1495856458515-0637185db551?auto=format&fit=crop&w=1200&q=80" alt="A finished AUREVAN watch resting on dark stone" loading="lazy">
+  </div>
+  <div class="heritage__text">
+    <h2>A quieter kind of luxury.</h2>
+    <p>AUREVAN was born from the pursuit of a simple idea: that an exceptional watch should feel as remarkable as the moment it measures.</p>
+    <p>We are not interested in noise. Our cases are finished to be looked at twice, our movements built to be trusted for decades, and our name is not printed anywhere it doesn't need to be. What remains is a watch that speaks only when you choose to show it.</p>
+    <p>Every AUREVAN is designed in-house, assembled by hand, and inspected before it is allowed to leave the workshop.</p>
+  </div>
+</section>
+
+<!-- ================= WHY AUREVAN ================= -->
+<section class="why">
+  <div class="section-head">
+    <h2>Why AUREVAN</h2>
+  </div>
+  <div class="why__grid">
+    <div class="why__item">
+      <div class="why__icon">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.2"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+      </div>
+      <h3>Precision Engineering</h3>
+      <p>Every movement is regulated across multiple positions before it's cased.</p>
+    </div>
+    <div class="why__item">
+      <div class="why__icon">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="M12 3l2.5 5.5L20 9l-4 4 1 6-5-3-5 3 1-6-4-4 5.5-.5L12 3Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg>
+      </div>
+      <h3>Premium Materials</h3>
+      <p>316L surgical steel, sapphire crystal and full-grain leather, as standard.</p>
+    </div>
+    <div class="why__item">
+      <div class="why__icon">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4 10-10" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <h3>Carefully Inspected</h3>
+      <p>Each timepiece is hand-checked for timing accuracy and finish before dispatch.</p>
+    </div>
+    <div class="why__item">
+      <div class="why__icon">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg>
+      </div>
+      <h3>2-Year Warranty</h3>
+      <p>Full coverage on movement and case for two years from delivery.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= REVIEWS ================= -->
+<section class="reviews" id="journal">
+  <div class="section-head">
+    <h2>From the Wrists of Owners</h2>
+  </div>
+  <div class="reviews__track" id="reviewsTrack"></div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section class="faq">
+  <div class="section-head">
+    <h2>Questions, Answered</h2>
+  </div>
+  <div class="faq__list" id="faqList"></div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section class="contact" id="contact">
+  <div class="contact__panel">
+    <h2>Speak With AUREVAN</h2>
+    <p>For sizing, orders or anything in between — we reply personally, usually within the day.</p>
+    <div class="contact__grid">
+      <div>
+        <span>WhatsApp</span>
+        <a href="#" id="contactWhatsapp">Message us</a>
+      </div>
+      <div>
+        <span>Email</span>
+        <a href="mailto:concierge@aurevan.example">concierge@aurevan.example</a>
+      </div>
+      <div>
+        <span>Business Hours</span>
+        <p>Mon – Sat, 10:00 – 19:00</p>
+      </div>
+      <div>
+        <span>Follow</span>
+        <p class="contact__social">
+          <a href="#">Instagram</a> · <a href="#">Pinterest</a> · <a href="#">TikTok</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <div class="footer__top">
+    <div class="footer__brand">
+      <span class="footer__mark">AUREVAN</span>
+      <p>Time, Refined.</p>
+    </div>
+    <div class="footer__links">
+      <a href="#collection">Collection</a>
+      <a href="#heritage">About</a>
+      <a href="#craftsmanship">Craftsmanship</a>
+      <a href="#" data-faq-link>FAQ</a>
+      <a href="#contact">Contact</a>
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <p>Cash on Delivery Available</p>
+    <p>© <span id="year"></span> AUREVAN. A fictional maison, for demonstration purposes.</p>
+  </div>
+</footer>
+
+<!-- ================= PRODUCT DETAIL MODAL ================= -->
+<div class="modal" id="productModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="pmName">
+  <div class="modal__backdrop" data-close-modal></div>
+  <div class="modal__panel modal__panel--product">
+    <button class="modal__close" data-close-modal aria-label="Close product details">&times;</button>
+    <div class="pm__gallery">
+      <div class="pm__main"><img id="pmMainImg" src="" alt=""></div>
+      <div class="pm__thumbs" id="pmThumbs"></div>
+    </div>
+    <div class="pm__info">
+      <p class="pm__collection" id="pmCollection"></p>
+      <h2 id="pmName"></h2>
+      <p class="pm__price" id="pmPrice"></p>
+      <p class="pm__desc" id="pmDesc"></p>
+
+      <dl class="pm__specs" id="pmSpecs"></dl>
+
+      <div class="pm__qty">
+        <label for="pmQtyInput">Quantity</label>
+        <div class="qty-stepper">
+          <button type="button" id="pmQtyMinus" aria-label="Decrease quantity">−</button>
+          <input type="number" id="pmQtyInput" value="1" min="1" max="10" inputmode="numeric">
+          <button type="button" id="pmQtyPlus" aria-label="Increase quantity">+</button>
+        </div>
+      </div>
+
+      <div class="pm__actions">
+        <button class="btn btn--ghost" id="pmViewOnly" type="button">Continue Browsing</button>
+        <button class="btn btn--primary" id="pmOrderNow" type="button">Order Now</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ================= CHECKOUT MODAL ================= -->
+<div class="modal" id="checkoutModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="checkoutTitle">
+  <div class="modal__backdrop" data-close-modal></div>
+  <div class="modal__panel modal__panel--checkout">
+    <button class="modal__close" data-close-modal aria-label="Close checkout">&times;</button>
+    <h2 id="checkoutTitle">Complete Your Order</h2>
+    <p class="checkout__product" id="checkoutProductLine"></p>
+
+    <form id="checkoutForm" novalidate>
+      <div class="field">
+        <label for="cName">Full Name</label>
+        <input type="text" id="cName" name="cName" required autocomplete="name">
+      </div>
+      <div class="field-row">
+        <div class="field">
+          <label for="cPhone">Phone Number</label>
+          <input type="tel" id="cPhone" name="cPhone" required autocomplete="tel">
+        </div>
+        <div class="field">
+          <label for="cCity">City</label>
+          <input type="text" id="cCity" name="cCity" required autocomplete="address-level2">
+        </div>
+      </div>
+      <div class="field">
+        <label for="cAddress">Complete Address</label>
+        <textarea id="cAddress" name="cAddress" rows="2" required autocomplete="street-address"></textarea>
+      </div>
+      <div class="field">
+        <label for="cMaps">Google Maps Location Link <span class="optional">(optional)</span></label>
+        <input type="url" id="cMaps" name="cMaps" placeholder="https://maps.google.com/…">
+      </div>
+      <div class="field-row">
+        <div class="field">
+          <label for="cQty">Quantity</label>
+          <input type="number" id="cQty" name="cQty" min="1" max="10" value="1" required inputmode="numeric">
+        </div>
+        <div class="field">
+          <label for="cWatch">Selected Watch</label>
+          <input type="text" id="cWatch" name="cWatch" readonly>
+        </div>
+      </div>
+      <div class="field">
+        <label for="cNotes">Additional Notes <span class="optional">(optional)</span></label>
+        <textarea id="cNotes" name="cNotes" rows="2" placeholder="Engraving, delivery instructions, etc."></textarea>
+      </div>
+
+      <div class="order-summary" id="orderSummary">
+        <div class="order-summary__row"><span>Product Price</span><span id="sumPrice"></span></div>
+        <div class="order-summary__row"><span>Quantity</span><span id="sumQty"></span></div>
+        <div class="order-summary__row"><span>Delivery Charges</span><span id="sumDelivery"></span></div>
+        <div class="order-summary__row order-summary__row--total"><span>Total</span><span id="sumTotal"></span></div>
+      </div>
+
+      <div class="payment-note">
+        <strong>Payment: Cash on Delivery</strong>
+        <p>Pay securely when your watch arrives.</p>
+      </div>
+
+      <button type="submit" class="btn btn--whatsapp" id="whatsappCta">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.6-.8-1.9-.9-.2-.1-.4-.1-.6.1-.2.3-.7.9-.8 1-.2.2-.3.2-.5.1-.3-.1-1.2-.4-2.2-1.4-.8-.7-1.4-1.6-1.5-1.9-.2-.3 0-.5.1-.6l.4-.5c.1-.1.2-.3.2-.4.1-.2 0-.3 0-.4-.1-.1-.6-1.4-.8-1.9-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.6.3-.2.3-.8.8-.8 1.9s.8 2.2 1 2.4c.1.2 1.6 2.5 4 3.5.6.2 1 .4 1.3.5.6.2 1.1.2 1.5.1.5-.1 1.6-.6 1.8-1.2.2-.6.2-1.1.1-1.2 0-.1-.2-.2-.4-.3Z"/><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm0 18.2c-1.6 0-3.2-.4-4.5-1.2l-.3-.2-3.1.8.8-3-.2-.3a8.2 8.2 0 1 1 7.3 3.9Z"/></svg>
+        Send Order to WhatsApp
+      </button>
+      <p class="checkout__disclaimer" id="checkoutDisclaimer" aria-live="polite"></p>
+    </form>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
