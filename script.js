@@ -1,617 +1,542 @@
-/* =============================================================
-   AUREVAN — Store configuration
-   The WhatsApp number lives here ONLY. Change it in one place.
-============================================================= */
+/**
+ * AUREVAN HORLOGERIE S.A. — ARCHITECTURE ENGINE
+ * Single Source Configuration & Dynamic State Control
+ */
+
+// ==================== STORE CONFIGURATION ====================
 const STORE_CONFIG = {
-  whatsappNumber: "10000000000", // country code + number, digits only
-  deliveryCharge: 15,
-  currency: "$"
+  // Configurable WhatsApp Concierge Number (Country Code without + or spaces)
+  whatsappNumber: "923095563165",
+  currencySymbol: "$",
+  deliveryCharge: 0, // Free courier delivery for luxury timepieces
 };
 
-/* =============================================================
-   Product data — single source of truth
-============================================================= */
+// ==================== WATCH REPERTOIRE CATALOG ====================
 const WATCHES = [
   {
-    id: "arc",
+    id: "aurevan-arc",
     name: "AUREVAN ARC",
-    collection: "The Signature Line",
-    category: "Automatic",
-    price: 1450,
-    shortDesc: "A curved sapphire crystal and a dial that catches light like water.",
-    longDesc: "The ARC softens every hard edge of a traditional dress watch. Its double-domed sapphire crystal bends light across a sunburst dial, while a 39mm case keeps it wearable under any cuff.",
-    images: [
-      "https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=1000&q=80",
-      "https://images.unsplash.com/photo-1509048191080-d2984bad6ae5?auto=format&fit=crop&w=1000&q=80",
-      "https://images.unsplash.com/photo-1495856458515-0637185db551?auto=format&fit=crop&w=1000&q=80"
-    ],
-    specs: { movement: "Automatic", case: "316L Stainless Steel", diameter: "39mm", crystal: "Sapphire", strap: "Italian Leather", water: "5 ATM", warranty: "2 Years" }
+    category: "classic",
+    price: 3450,
+    image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=1000&auto=format&fit=crop",
+    shortDesc: "Timeless minimalist dress watch featuring a sunray silver dial and blued steel hands.",
+    fullDesc: "The ARC represents pure horological essentialism. Clean geometric proportions, razor-thin bezel architecture, and an in-house automatic caliber visible through a sapphire case back.",
+    specs: {
+      movement: "Caliber AV-101 Automatic (28,800 vph)",
+      case: "316L Surgical Grade Stainless Steel",
+      crystal: "Scratch-resistant Sapphire with Anti-Reflective coating",
+      strap: "Hand-stitched Italian Calfskin Leather",
+      diameter: "40 mm",
+      waterResistance: "5 ATM (50 Meters)",
+      warranty: "2 Years International Warranty"
+    }
   },
   {
-    id: "vantage",
+    id: "aurevan-vantage",
     name: "AUREVAN VANTAGE",
-    collection: "The Field Line",
-    category: "Sport",
-    price: 1690,
-    shortDesc: "Built for altitude, engineered for the everyday.",
-    longDesc: "VANTAGE takes its cues from vintage field instruments — high-contrast markers, a screw-down crown, and a case tough enough to forget you're wearing it.",
-    images: [
-      "https://images.unsplash.com/photo-1533139502658-0198f920d8e8?auto=format&fit=crop&w=1000&q=80",
-      "https://images.unsplash.com/photo-1548171915-e79a380a2a4b?auto=format&fit=crop&w=1000&q=80",
-      "https://images.unsplash.com/photo-1587836374828-4dbafa94cf0e?auto=format&fit=crop&w=1000&q=80"
-    ],
-    specs: { movement: "Automatic", case: "Brushed Titanium", diameter: "41mm", crystal: "Sapphire", strap: "Rubber", water: "20 ATM", warranty: "2 Years" }
+    category: "chronograph",
+    price: 4200,
+    image: "https://images.unsplash.com/photo-1547996160-81dfa63595aa?q=80&w=1000&auto=format&fit=crop",
+    shortDesc: "High-precision column-wheel chronograph with tachymeter ceramic bezel.",
+    fullDesc: "Engineered for speed and accurate mechanical timing. The VANTAGE integrates dual sub-dials, tactile piston pushers, and a ceramic tachymeter ring for racing purists.",
+    specs: {
+      movement: "Caliber AV-805 Column-Wheel Chronograph",
+      case: "Brushed & Polished 316L Stainless Steel",
+      crystal: "Double-Domed Sapphire Crystal",
+      strap: "Perforated Racing Leather Strap",
+      diameter: "42 mm",
+      waterResistance: "10 ATM (100 Meters)",
+      warranty: "2 Years International Warranty"
+    }
   },
   {
-    id: "elite",
+    id: "aurevan-elite",
     name: "AUREVAN ÉLITE",
-    collection: "The Signature Line",
-    category: "Classic",
-    price: 2150,
-    shortDesc: "The quiet confidence of a watch that doesn't need to prove anything.",
-    longDesc: "ÉLITE is our purest dress watch — a slim case, a hand-finished dial, and a movement chosen for how quietly it runs, not how loudly it's marketed.",
-    images: [
-      "https://images.unsplash.com/photo-1548169874-53e85f753f1e?auto=format&fit=crop&w=1000&q=80",
-      "https://images.unsplash.com/photo-1434056886845-dac89ffe9b56?auto=format&fit=crop&w=1000&q=80",
-      "https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=1000&q=80"
-    ],
-    specs: { movement: "Automatic", case: "316L Stainless Steel", diameter: "38mm", crystal: "Sapphire", strap: "Italian Leather", water: "3 ATM", warranty: "2 Years" }
+    category: "limited",
+    price: 7800,
+    image: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=1000&auto=format&fit=crop",
+    shortDesc: "DLC obsidian black titanium limited edition skeletonized masterpiece.",
+    fullDesc: "Limited to 100 numbered pieces worldwide. The ÉLITE showcases a hand-beveled skeleton movement housed in lightweight, ultra-durable Grade 5 titanium with Diamond-Like Carbon coating.",
+    specs: {
+      movement: "Caliber AV-900 Skeletonized Manufacture",
+      case: "Grade 5 DLC-Coated Titanium",
+      crystal: "Anti-Reflective Sapphire (Front & Case back)",
+      strap: "Integrated Alligator & Rubber Hybrid",
+      diameter: "41 mm",
+      waterResistance: "10 ATM (100 Meters)",
+      warranty: "2 Years International Warranty"
+    }
   },
   {
-    id: "chronos",
+    id: "aurevan-chronos",
     name: "AUREVAN CHRONOS",
-    collection: "The Racing Line",
-    category: "Chronograph",
-    price: 2480,
-    shortDesc: "Three registers, one purpose — measuring what matters.",
-    longDesc: "CHRONOS pairs a tri-compax layout with a tachymeter bezel, built for anyone who has ever wanted to time something properly.",
-    images: [
-      "https://images.unsplash.com/photo-1519674584336-6d5a4ba9c9a4?auto=format&fit=crop&w=1000&q=80",
-      "https://images.unsplash.com/photo-1533139502658-0198f920d8e8?auto=format&fit=crop&w=1000&q=80",
-      "https://images.unsplash.com/photo-1548171915-e79a380a2a4b?auto=format&fit=crop&w=1000&q=80"
-    ],
-    specs: { movement: "Automatic Chronograph", case: "316L Stainless Steel", diameter: "42mm", crystal: "Sapphire", strap: "Steel Bracelet", water: "10 ATM", warranty: "2 Years" }
+    category: "automatic",
+    price: 5100,
+    image: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=1000&auto=format&fit=crop",
+    shortDesc: "Dual-time GMT automatic timepiece built for modern transcontinental travel.",
+    fullDesc: "Command time across time zones. Features a bi-directional 24-hour rotating ceramic bezel and a high-visibility GMT hand for seamless global reference.",
+    specs: {
+      movement: "Caliber AV- GMT Automatic Movement",
+      case: "316L Stainless Steel with Satin Finish",
+      crystal: "Sapphire with Cyclops Date Lens",
+      strap: "Solid 3-Link Steel Bracelet with Micro-Adjustment",
+      diameter: "41.5 mm",
+      waterResistance: "20 ATM (200 Meters)",
+      warranty: "2 Years International Warranty"
+    }
   },
   {
-    id: "noir",
+    id: "aurevan-noir",
     name: "AUREVAN NOIR",
-    collection: "The Shadow Line",
-    category: "Limited Edition",
-    price: 3200,
-    shortDesc: "One of three hundred. A case finished entirely in black DLC.",
-    longDesc: "NOIR is produced in a run of 300, each individually numbered on the caseback. A black DLC coating over titanium gives it a depth no photograph quite captures.",
-    images: [
-      "https://images.unsplash.com/photo-1587836374828-4dbafa94cf0e?auto=format&fit=crop&w=1000&q=80",
-      "https://images.unsplash.com/photo-1619946794135-5bc917a27793?auto=format&fit=crop&w=1000&q=80",
-      "https://images.unsplash.com/photo-1495856458515-0637185db551?auto=format&fit=crop&w=1000&q=80"
-    ],
-    specs: { movement: "Automatic", case: "DLC-Coated Titanium", diameter: "40mm", crystal: "Sapphire", strap: "Black Rubber", water: "10 ATM", warranty: "2 Years" }
+    category: "sport",
+    price: 3900,
+    image: "https://images.unsplash.com/photo-1539185441755-769473a23570?q=80&w=1000&auto=format&fit=crop",
+    shortDesc: "Monochrome tactical sport watch crafted for water resistance and legibility.",
+    fullDesc: "Unforgiving durability meets nocturnal refinement. High-potency Super-LumiNova indices guarantee instant readability under deep water or ambient twilight.",
+    specs: {
+      movement: "Caliber AV-300 Heavy Duty Automatic",
+      case: "Matte Black PVD Stainless Steel",
+      crystal: "Flat Sapphire with Inner AR Coating",
+      strap: "High-Density FKM Tactical Rubber",
+      diameter: "43 mm",
+      waterResistance: "30 ATM (300 Meters)",
+      warranty: "2 Years International Warranty"
+    }
   },
   {
-    id: "regent",
+    id: "aurevan-regent",
     name: "AUREVAN REGENT",
-    collection: "The Signature Line",
-    category: "Classic",
-    price: 1980,
-    shortDesc: "A guilloché dial, hand-engraved the old way.",
-    longDesc: "REGENT revives a hand-guilloché technique on its dial, catching light differently with every turn of the wrist. Understated, until you look closely.",
-    images: [
-      "https://images.unsplash.com/photo-1509048191080-d2984bad6ae5?auto=format&fit=crop&w=1000&q=80",
-      "https://images.unsplash.com/photo-1548169874-53e85f753f1e?auto=format&fit=crop&w=1000&q=80",
-      "https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=1000&q=80"
-    ],
-    specs: { movement: "Automatic", case: "18k Gold-Plated Steel", diameter: "39mm", crystal: "Sapphire", strap: "Alligator-Embossed Leather", water: "3 ATM", warranty: "2 Years" }
+    category: "classic",
+    price: 4600,
+    image: "https://images.unsplash.com/photo-1524805444758-089113d48a6d?q=80&w=1000&auto=format&fit=crop",
+    shortDesc: "Rose gold accented executive watch with small-seconds subdial and exhibition back.",
+    fullDesc: "Designed for distinguished presence. Warm rose gold hands and applied Roman numerals float above an intricate guilloché dial pattern.",
+    specs: {
+      movement: "Caliber AV-202 Hand-Wound Precision",
+      case: "Rose Gold PVD & Stainless Steel Dual Tone",
+      crystal: "Box-Shaped Sapphire Crystal",
+      strap: "Genuine Croco-Patterned Leather",
+      diameter: "39.5 mm",
+      waterResistance: "5 ATM (50 Meters)",
+      warranty: "2 Years International Warranty"
+    }
   },
   {
-    id: "monarch",
+    id: "aurevan-monarch",
     name: "AUREVAN MONARCH",
-    collection: "The Heritage Line",
-    category: "Classic",
-    price: 2760,
-    shortDesc: "A full steel bracelet and a weight that says it's built to last.",
-    longDesc: "MONARCH is our heaviest hitter — an integrated steel bracelet, a fluted bezel, and proportions borrowed from the golden era of the sports-luxury watch.",
-    images: [
-      "https://images.unsplash.com/photo-1434056886845-dac89ffe9b56?auto=format&fit=crop&w=1000&q=80",
-      "https://images.unsplash.com/photo-1533139502658-0198f920d8e8?auto=format&fit=crop&w=1000&q=80",
-      "https://images.unsplash.com/photo-1619946794135-5bc917a27793?auto=format&fit=crop&w=1000&q=80"
-    ],
-    specs: { movement: "Automatic", case: "316L Stainless Steel", diameter: "40mm", crystal: "Sapphire", strap: "Steel Bracelet", water: "10 ATM", warranty: "2 Years" }
+    category: "automatic",
+    price: 6200,
+    image: "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?q=80&w=1000&auto=format&fit=crop",
+    shortDesc: "Complete annual calendar watch displaying day, date, month, and moonphase.",
+    fullDesc: "A horological poetry in motion. Tracks lunar cycles with a lapis lazuli moonphase disc alongside complete calendar complications.",
+    specs: {
+      movement: "Caliber AV-700 Complication Automatic",
+      case: "Polished 316L Stainless Steel",
+      crystal: "Curved Sapphire Crystal",
+      strap: "Hand-finished Cognac Leather",
+      diameter: "41 mm",
+      waterResistance: "5 ATM (50 Meters)",
+      warranty: "2 Years International Warranty"
+    }
   },
   {
-    id: "apex",
+    id: "aurevan-apex",
     name: "AUREVAN APEX",
-    collection: "The Racing Line",
-    category: "Sport",
-    price: 2050,
-    shortDesc: "A sport watch with a dress watch's manners.",
-    longDesc: "APEX bridges two worlds — a robust case built for daily wear, finished with the kind of polish you'd expect from something twice the price.",
-    images: [
-      "https://images.unsplash.com/photo-1619946794135-5bc917a27793?auto=format&fit=crop&w=1000&q=80",
-      "https://images.unsplash.com/photo-1587836374828-4dbafa94cf0e?auto=format&fit=crop&w=1000&q=80",
-      "https://images.unsplash.com/photo-1548171915-e79a380a2a4b?auto=format&fit=crop&w=1000&q=80"
-    ],
-    specs: { movement: "Automatic", case: "Brushed Stainless Steel", diameter: "40mm", crystal: "Sapphire", strap: "Steel Bracelet", water: "15 ATM", warranty: "2 Years" }
+    category: "chronograph",
+    price: 5900,
+    image: "https://images.unsplash.com/photo-1517463048247-39a7c6dc5811?q=80&w=1000&auto=format&fit=crop",
+    shortDesc: "Forged carbon case chronograph with high-contrast luminescent sub-dials.",
+    fullDesc: "Ultra-lightweight high-tech materials derived from aerospace research. Each forged carbon case pattern is entirely unique to its wearer.",
+    specs: {
+      movement: "Caliber AV-850 High-Frequency Automatic",
+      case: "Forged Carbon Fiber & Titanium Core",
+      crystal: "Smoked Sapphire Crystal",
+      strap: "Balistic Nylon & Leather Composite",
+      diameter: "42.5 mm",
+      waterResistance: "10 ATM (100 Meters)",
+      warranty: "2 Years International Warranty"
+    }
   }
 ];
 
-const REVIEWS = [
-  { name: "Daniel R.", location: "Verified Buyer", stars: 5, quote: "The ÉLITE is thinner than I expected in the best way. It disappears under a shirt cuff, which is exactly what I wanted." },
-  { name: "Priya M.", location: "Verified Buyer", stars: 5, quote: "Ordered the VANTAGE for hiking trips. Two months in, no scratches on the crystal despite my best efforts to test that." },
-  { name: "Thomas K.", location: "Verified Buyer", stars: 4, quote: "CHRONOS looks sharper in person than in photos. The bracelet needed a link removed but that was a five-minute fix." },
-  { name: "Aisha B.", location: "Verified Buyer", stars: 5, quote: "The NOIR arrived numbered as promised, in a box that felt as considered as the watch itself. Worth the wait." },
-  { name: "Marco V.", location: "Verified Buyer", stars: 5, quote: "COD made it an easy decision to finally buy from a brand I hadn't held in person. Delivery was faster than quoted." }
-];
-
-const FAQS = [
-  { q: "Do you offer Cash on Delivery?", a: "Yes. Every order ships with Cash on Delivery — you pay only once your watch has arrived and you're ready to accept it." },
-  { q: "How do I order?", a: "Choose a watch, select your quantity, and use the Order Now button to open the checkout form. Submitting the form prepares your order in WhatsApp for you to send to us." },
-  { q: "How long is delivery?", a: "Most orders arrive within 3–7 business days domestically, depending on your city. We'll confirm an estimate over WhatsApp once your order is received." },
-  { q: "What warranty comes with the watch?", a: "Every AUREVAN watch includes a 2-year warranty covering the movement and case against manufacturing defects." },
-  { q: "Can I order multiple watches?", a: "Yes — adjust the quantity field in the checkout form before sending your order to WhatsApp." },
-  { q: "Can I modify my order?", a: "Since orders are confirmed over WhatsApp, you can message us directly to adjust details any time before dispatch." },
-  { q: "How can I contact support?", a: "Reach us on WhatsApp or by email at concierge@aurevan.example — we typically reply within the same day." }
-];
-
-/* =============================================================
-   State
-============================================================= */
+// ==================== STATE MANAGEMENT ====================
+let cart = [];
 let currentFilter = "all";
-let activeProduct = null;
-let checkoutProduct = null;
 
-const money = (n) => `${STORE_CONFIG.currency}${n.toLocaleString("en-US")}`;
+// ==================== INITIALIZATION ====================
+document.addEventListener("DOMContentLoaded", () => {
+  renderProducts();
+  initSwiper();
+  initGSAP();
+  initNavigation();
+  initFilters();
+  initAccordions();
+  initCartAndCheckout();
+  updateContactLinks();
+});
 
-/* =============================================================
-   Render: Hero slides
-============================================================= */
-function renderHero() {
-  const wrap = document.getElementById("heroSlides");
-  const heroSet = [WATCHES[0], WATCHES[1], WATCHES[3], WATCHES[4], WATCHES[6]];
-  wrap.innerHTML = heroSet.map(w => `
-    <div class="swiper-slide">
-      <img src="${w.images[0]}" alt="${w.name} — ${w.collection}" loading="eager">
-    </div>
-  `).join("");
-}
+// Render Product Catalog
+function renderProducts() {
+  const grid = document.getElementById("productGrid");
+  if (!grid) return;
 
-/* =============================================================
-   Render: Collection grid
-============================================================= */
-function renderCollection() {
-  const grid = document.getElementById("collectionGrid");
-  const list = currentFilter === "all" ? WATCHES : WATCHES.filter(w => w.category === currentFilter);
+  const filtered = currentFilter === "all" 
+    ? WATCHES 
+    : WATCHES.filter(w => w.category === currentFilter);
 
-  if (!list.length) {
-    grid.innerHTML = `<p class="empty-state">No watches match this filter yet.</p>`;
-    return;
-  }
-
-  grid.innerHTML = list.map(w => `
-    <article class="watch-card reveal" data-id="${w.id}">
-      <div class="watch-card__media">
-        <img src="${w.images[0]}" alt="${w.name}, ${w.category} watch" loading="lazy">
+  grid.innerHTML = filtered.map(watch => `
+    <article class="product-card">
+      <div class="product-image-container">
+        <span class="product-category-tag">${watch.category}</span>
+        <img src="${watch.image}" alt="${watch.name}" class="product-img" loading="lazy">
       </div>
-      <div class="watch-card__body">
-        <p class="watch-card__collection">${w.collection}</p>
-        <h3 class="watch-card__name">${w.name}</h3>
-        <p class="watch-card__desc">${w.shortDesc}</p>
-        <p class="watch-card__price">${money(w.price)}</p>
-        <div class="watch-card__actions">
-          <button class="btn btn--ghost" data-view="${w.id}">View Watch</button>
-          <button class="btn btn--primary" data-order="${w.id}">Order Now</button>
+      <div class="product-info">
+        <h3 class="product-title">${watch.name}</h3>
+        <p class="product-short-desc">${watch.shortDesc}</p>
+        <div class="product-meta">
+          <span class="product-price">${STORE_CONFIG.currencySymbol}${watch.price.toLocaleString()}</span>
+        </div>
+        <div class="product-actions">
+          <button class="btn btn-outline btn-sm" onclick="openProductModal('${watch.id}')">View Watch</button>
+          <button class="btn btn-primary btn-sm" onclick="directOrder('${watch.id}')">Order Now</button>
         </div>
       </div>
     </article>
-  `).join("");
-
-  grid.querySelectorAll("[data-view]").forEach(btn => {
-    btn.addEventListener("click", () => openProductModal(btn.dataset.view));
-  });
-  grid.querySelectorAll("[data-order]").forEach(btn => {
-    btn.addEventListener("click", () => openCheckout(btn.dataset.order, 1));
-  });
-
-  requestAnimationFrame(observeReveals);
+  `).join('');
 }
 
-/* =============================================================
-   Render: Featured watch
-============================================================= */
-function renderFeatured() {
-  const w = WATCHES[3]; // CHRONOS
-  document.getElementById("featuredImg").src = w.images[0];
-  document.getElementById("featuredImg").alt = `${w.name} — featured watch`;
-  document.getElementById("featuredCollection").textContent = w.collection;
-  document.getElementById("featuredName").textContent = w.name;
-  document.getElementById("featuredDesc").textContent = w.longDesc;
-  document.getElementById("featuredPrice").textContent = money(w.price);
-  document.getElementById("featuredCta").addEventListener("click", () => openProductModal(w.id));
-}
-
-/* =============================================================
-   Render: Reviews
-============================================================= */
-function renderReviews() {
-  document.getElementById("reviewsTrack").innerHTML = REVIEWS.slice(0, 5).map(r => `
-    <div class="review-card reveal">
-      <div class="review-card__stars">${"★".repeat(r.stars)}${"☆".repeat(5 - r.stars)}</div>
-      <p class="review-card__quote">"${r.quote}"</p>
-      <p class="review-card__author"><strong>${r.name}</strong>${r.location}</p>
-    </div>
-  `).join("");
-  requestAnimationFrame(observeReveals);
-}
-
-/* =============================================================
-   Render: FAQ
-============================================================= */
-function renderFAQ() {
-  const list = document.getElementById("faqList");
-  list.innerHTML = FAQS.map((f, i) => `
-    <div class="faq-item" data-index="${i}">
-      <button class="faq-item__q" aria-expanded="false">
-        <span>${f.q}</span>
-        <span class="plus" aria-hidden="true"></span>
-      </button>
-      <div class="faq-item__a"><p>${f.a}</p></div>
-    </div>
-  `).join("");
-
-  list.querySelectorAll(".faq-item").forEach(item => {
-    const q = item.querySelector(".faq-item__q");
-    const a = item.querySelector(".faq-item__a");
-    q.addEventListener("click", () => {
-      const isOpen = item.classList.contains("is-open");
-      list.querySelectorAll(".faq-item").forEach(other => {
-        other.classList.remove("is-open");
-        other.querySelector(".faq-item__q").setAttribute("aria-expanded", "false");
-        other.querySelector(".faq-item__a").style.maxHeight = null;
-      });
-      if (!isOpen) {
-        item.classList.add("is-open");
-        q.setAttribute("aria-expanded", "true");
-        a.style.maxHeight = a.scrollHeight + "px";
-      }
-    });
-  });
-}
-
-/* =============================================================
-   Filters
-============================================================= */
+// Category Filter Controller
 function initFilters() {
-  const filters = document.getElementById("filters");
-  filters.querySelectorAll(".filter").forEach(btn => {
-    btn.addEventListener("click", () => {
-      filters.querySelectorAll(".filter").forEach(b => {
-        b.classList.remove("is-active");
-        b.setAttribute("aria-selected", "false");
-      });
-      btn.classList.add("is-active");
-      btn.setAttribute("aria-selected", "true");
-      currentFilter = btn.dataset.filter;
-      renderCollection();
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      currentFilter = btn.getAttribute('data-filter');
+      renderProducts();
     });
   });
 }
 
-/* =============================================================
-   Product modal
-============================================================= */
-function openProductModal(id) {
-  const w = WATCHES.find(x => x.id === id);
-  if (!w) return;
-  activeProduct = w;
+// Swiper Hero Slider
+function initSwiper() {
+  new Swiper('#heroSwiper', {
+    loop: true,
+    effect: 'fade',
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false,
+    },
+    speed: 1600,
+  });
+}
 
-  document.getElementById("pmCollection").textContent = w.collection;
-  document.getElementById("pmName").textContent = w.name;
-  document.getElementById("pmPrice").textContent = money(w.price);
-  document.getElementById("pmDesc").textContent = w.longDesc;
-  document.getElementById("pmMainImg").src = w.images[0];
-  document.getElementById("pmMainImg").alt = w.name;
-  document.getElementById("pmQtyInput").value = 1;
+// GSAP Animations
+function initGSAP() {
+  gsap.registerPlugin(ScrollTrigger);
 
-  document.getElementById("pmThumbs").innerHTML = w.images.map((src, i) => `
-    <img src="${src}" alt="${w.name} view ${i + 1}" class="${i === 0 ? "is-active" : ""}" data-src="${src}">
-  `).join("");
-  document.querySelectorAll("#pmThumbs img").forEach(t => {
-    t.addEventListener("click", () => {
-      document.getElementById("pmMainImg").src = t.dataset.src;
-      document.querySelectorAll("#pmThumbs img").forEach(x => x.classList.remove("is-active"));
-      t.classList.add("is-active");
+  // Hero Text Entrance
+  gsap.from(".hero-content > *", {
+    y: 40,
+    opacity: 0,
+    duration: 1.2,
+    stagger: 0.2,
+    ease: "power3.out",
+    delay: 0.3
+  });
+
+  // Section Headers Reveal
+  gsap.utils.toArray('.section-header').forEach(header => {
+    gsap.from(header, {
+      scrollTrigger: {
+        trigger: header,
+        start: "top 80%",
+      },
+      y: 30,
+      opacity: 0,
+      duration: 1,
+      ease: "power2.out"
     });
   });
 
-  const specs = w.specs;
-  document.getElementById("pmSpecs").innerHTML = `
-    <div><dt>Movement</dt><dd>${specs.movement}</dd></div>
-    <div><dt>Case</dt><dd>${specs.case}</dd></div>
-    <div><dt>Case Diameter</dt><dd>${specs.diameter}</dd></div>
-    <div><dt>Crystal</dt><dd>${specs.crystal}</dd></div>
-    <div><dt>Strap</dt><dd>${specs.strap}</dd></div>
-    <div><dt>Water Resistance</dt><dd>${specs.water}</dd></div>
-    <div><dt>Warranty</dt><dd>${specs.warranty}</dd></div>
-  `;
-
-  openModal("productModal");
-}
-
-function initProductModal() {
-  document.getElementById("pmQtyMinus").addEventListener("click", () => stepQty(-1));
-  document.getElementById("pmQtyPlus").addEventListener("click", () => stepQty(1);
-  );
-  document.getElementById("pmViewOnly").addEventListener("click", () => closeModal("productModal"));
-  document.getElementById("pmOrderNow").addEventListener("click", () => {
-    const qty = parseInt(document.getElementById("pmQtyInput").value, 10) || 1;
-    closeModal("productModal");
-    openCheckout(activeProduct.id, qty);
+  // Craftsmanship Cards Reveal
+  gsap.from(".craft-card", {
+    scrollTrigger: {
+      trigger: ".craft-grid",
+      start: "top 80%",
+    },
+    y: 40,
+    opacity: 0,
+    duration: 0.8,
+    stagger: 0.15,
+    ease: "power2.out"
   });
 }
 
-function stepQty(delta) {
-  const input = document.getElementById("pmQtyInput");
-  let val = (parseInt(input.value, 10) || 1) + delta;
-  val = Math.min(10, Math.max(1, val));
-  input.value = val;
+// Sticky Navbar & Mobile Drawer
+function initNavigation() {
+  const navbar = document.getElementById('navbar');
+  const hamburgerBtn = document.getElementById('hamburgerBtn');
+  const navMenu = document.getElementById('navMenu');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  });
+
+  if (hamburgerBtn && navMenu) {
+    hamburgerBtn.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
+
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', () => navMenu.classList.remove('active'));
+    });
+  }
 }
 
-/* =============================================================
-   Checkout modal
-============================================================= */
-function openCheckout(id, qty) {
-  const w = WATCHES.find(x => x.id === id);
-  if (!w) return;
-  checkoutProduct = w;
-
-  document.getElementById("checkoutProductLine").textContent = `${w.name} — ${w.collection}`;
-  document.getElementById("cWatch").value = w.name;
-  document.getElementById("cQty").value = qty || 1;
-  document.getElementById("checkoutDisclaimer").textContent = "";
-  document.getElementById("checkoutForm").reset();
-  document.getElementById("cWatch").value = w.name;
-  document.getElementById("cQty").value = qty || 1;
-
-  updateOrderSummary();
-  openModal("checkoutModal");
+// FAQ Accordions
+function initAccordions() {
+  const items = document.querySelectorAll('.accordion-item');
+  items.forEach(item => {
+    const header = item.querySelector('.accordion-header');
+    header.addEventListener('click', () => {
+      const isActive = item.classList.contains('active');
+      items.forEach(i => i.classList.remove('active'));
+      if (!isActive) item.classList.add('active');
+    });
+  });
 }
 
-function updateOrderSummary() {
-  if (!checkoutProduct) return;
-  const qty = Math.max(1, parseInt(document.getElementById("cQty").value, 10) || 1);
-  const subtotal = checkoutProduct.price * qty;
-  const total = subtotal + STORE_CONFIG.deliveryCharge;
+// ==================== MODALS & SHOPPING BAG ====================
+function initCartAndCheckout() {
+  const cartBtn = document.getElementById('cartBtn');
+  const cartDrawer = document.getElementById('cartDrawer');
+  const cartCloseBtn = document.getElementById('cartCloseBtn');
+  const cartOverlay = document.getElementById('cartOverlay');
+  const proceedCheckoutBtn = document.getElementById('proceedCheckoutBtn');
 
-  document.getElementById("sumPrice").textContent = money(checkoutProduct.price);
-  document.getElementById("sumQty").textContent = qty;
-  document.getElementById("sumDelivery").textContent = money(STORE_CONFIG.deliveryCharge);
-  document.getElementById("sumTotal").textContent = money(total);
-}
+  cartBtn.addEventListener('click', () => cartDrawer.classList.add('active'));
+  
+  const closeCart = () => cartDrawer.classList.remove('active');
+  cartCloseBtn.addEventListener('click', closeCart);
+  cartOverlay.addEventListener('click', closeCart);
 
-function initCheckout() {
-  document.getElementById("cQty").addEventListener("input", updateOrderSummary);
-
-  document.getElementById("checkoutForm").addEventListener("submit", (e) => {
-    e.preventDefault();
-    const form = e.target;
-    if (!form.checkValidity()) {
-      form.reportValidity();
+  proceedCheckoutBtn.addEventListener('click', () => {
+    if (cart.length === 0) {
+      alert("Your shopping bag is empty.");
       return;
     }
-
-    const name = document.getElementById("cName").value.trim();
-    const phone = document.getElementById("cPhone").value.trim();
-    const address = document.getElementById("cAddress").value.trim();
-    const city = document.getElementById("cCity").value.trim();
-    const maps = document.getElementById("cMaps").value.trim();
-    const qty = Math.max(1, parseInt(document.getElementById("cQty").value, 10) || 1);
-    const notes = document.getElementById("cNotes").value.trim();
-
-    const subtotal = checkoutProduct.price * qty;
-    const total = subtotal + STORE_CONFIG.deliveryCharge;
-
-    const lines = [
-      "AUREVAN — NEW ORDER",
-      "",
-      `Customer: ${name}`,
-      `Phone: ${phone}`,
-      `Address: ${address}`,
-      `City: ${city}`,
-      `Google Maps: ${maps || "Not provided"}`,
-      `Product: ${checkoutProduct.name}`,
-      `Quantity: ${qty}`,
-      `Product Price: ${money(checkoutProduct.price)}`,
-      `Delivery: ${money(STORE_CONFIG.deliveryCharge)}`,
-      `Total: ${money(total)}`,
-      "Payment: Cash on Delivery",
-      `Notes: ${notes || "None"}`
-    ];
-
-    const message = encodeURIComponent(lines.join("\n"));
-    const url = `https://wa.me/${STORE_CONFIG.whatsappNumber}?text=${message}`;
-
-    window.open(url, "_blank", "noopener");
-
-    document.getElementById("checkoutDisclaimer").textContent =
-      "Your order details have been prepared in WhatsApp. Send the message to confirm your order.";
-    showToast("Order prepared — please send it in WhatsApp to confirm.");
+    closeCart();
+    openCheckoutModal();
   });
+
+  // Modal Generic Close Buttons
+  document.querySelectorAll('[data-close]').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      const modalId = e.target.getAttribute('data-close');
+      const modal = document.getElementById(modalId);
+      if (modal) modal.classList.remove('active');
+    });
+  });
+
+  const checkoutForm = document.getElementById('checkoutForm');
+  checkoutForm.addEventListener('submit', handleCheckoutSubmit);
 }
 
-/* =============================================================
-   Generic modal open/close
-============================================================= */
-function openModal(id) {
-  const modal = document.getElementById(id);
-  modal.classList.add("is-open");
-  modal.setAttribute("aria-hidden", "false");
-  document.body.style.overflow = "hidden";
+// Open Technical Details Modal
+function openProductModal(watchId) {
+  const watch = WATCHES.find(w => w.id === watchId);
+  if (!watch) return;
+
+  const modalBody = document.getElementById('productModalBody');
+  modalBody.innerHTML = `
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2.5rem; align-items: center;">
+      <div>
+        <img src="${watch.image}" alt="${watch.name}" style="width: 100%; height: 380px; object-fit: cover; border: 1px solid var(--border-subtle);">
+      </div>
+      <div>
+        <span class="section-tag">${watch.category}</span>
+        <h2 style="font-size: 2.2rem; margin-bottom: 0.4rem;">${watch.name}</h2>
+        <p style="font-size: 1.4rem; color: var(--accent-champagne); font-family: var(--font-serif); margin-bottom: 1rem;">
+          ${STORE_CONFIG.currencySymbol}${watch.price.toLocaleString()} USD
+        </p>
+        <p class="body-text">${watch.fullDesc}</p>
+
+        <h4 style="font-size: 0.85rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent-champagne); margin-top: 1.5rem;">Technical Specifications</h4>
+        <table class="specs-table">
+          <tr><td>Movement</td><td>${watch.specs.movement}</td></tr>
+          <tr><td>Case</td><td>${watch.specs.case}</td></tr>
+          <tr><td>Crystal</td><td>${watch.specs.crystal}</td></tr>
+          <tr><td>Strap</td><td>${watch.specs.strap}</td></tr>
+          <tr><td>Diameter</td><td>${watch.specs.diameter}</td></tr>
+          <tr><td>Water Resistance</td><td>${watch.specs.waterResistance}</td></tr>
+          <tr><td>Warranty</td><td>${watch.specs.warranty}</td></tr>
+        </table>
+
+        <div style="display: flex; gap: 10px; margin-top: 1.5rem;">
+          <button class="btn btn-outline" style="flex: 1;" onclick="addToCart('${watch.id}')">Add To Bag</button>
+          <button class="btn btn-primary" style="flex: 1;" onclick="directOrder('${watch.id}')">Order Now (COD)</button>
+        </div>
+      </div>
+    </div>
+  `;
+
+  document.getElementById('productDetailModal').classList.add('active');
 }
-function closeModal(id) {
-  const modal = document.getElementById(id);
-  modal.classList.remove("is-open");
-  modal.setAttribute("aria-hidden", "true");
-  if (!document.querySelector(".modal.is-open")) {
-    document.body.style.overflow = "";
+
+// Trigger Direct Order for Single Watch
+function directOrder(watchId) {
+  const watch = WATCHES.find(w => w.id === watchId);
+  if (!watch) return;
+
+  cart = [{ watch, quantity: 1 }];
+  updateCartUI();
+
+  document.getElementById('productDetailModal').classList.remove('active');
+  openCheckoutModal();
+}
+
+// Add Item To Cart Drawer
+function addToCart(watchId) {
+  const watch = WATCHES.find(w => w.id === watchId);
+  if (!watch) return;
+
+  const existing = cart.find(item => item.watch.id === watchId);
+  if (existing) {
+    existing.quantity += 1;
+  } else {
+    cart.push({ watch, quantity: 1 });
   }
-}
-function initModalDismiss() {
-  document.querySelectorAll("[data-close-modal]").forEach(el => {
-    el.addEventListener("click", (e) => {
-      const modal = e.target.closest(".modal");
-      closeModal(modal.id);
-    });
-  });
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") {
-      document.querySelectorAll(".modal.is-open").forEach(m => closeModal(m.id));
-    }
-  });
+
+  updateCartUI();
+  document.getElementById('productDetailModal').classList.remove('active');
+  document.getElementById('cartDrawer').classList.add('active');
 }
 
-/* =============================================================
-   Toast
-============================================================= */
-let toastTimer;
-function showToast(msg) {
-  const toast = document.getElementById("toast");
-  toast.textContent = msg;
-  toast.classList.add("is-visible");
-  clearTimeout(toastTimer);
-  toastTimer = setTimeout(() => toast.classList.remove("is-visible"), 4200);
-}
+// Update Cart UI State
+function updateCartUI() {
+  const badge = document.getElementById('cartBadge');
+  const itemsList = document.getElementById('cartItemsList');
+  const subtotalEl = document.getElementById('cartSubtotal');
+  const totalEl = document.getElementById('cartTotal');
 
-/* =============================================================
-   Navbar
-============================================================= */
-function initNav() {
-  const nav = document.getElementById("siteNav");
-  const toggle = document.getElementById("navToggle");
-  const bag = document.getElementById("bagBtn");
+  const totalQty = cart.reduce((sum, item) => sum + item.quantity, 0);
+  badge.textContent = totalQty;
 
-  const onScroll = () => {
-    nav.classList.toggle("is-scrolled", window.scrollY > 40);
-  };
-  onScroll();
-  window.addEventListener("scroll", onScroll, { passive: true });
-
-  toggle.addEventListener("click", () => {
-    const isOpen = nav.classList.toggle("is-open");
-    toggle.setAttribute("aria-expanded", String(isOpen));
-  });
-
-  nav.querySelectorAll(".nav__mobile a, .nav__links a").forEach(link => {
-    link.addEventListener("click", () => {
-      nav.classList.remove("is-open");
-      toggle.setAttribute("aria-expanded", "false");
-    });
-  });
-
-  bag.addEventListener("click", () => {
-    document.getElementById("collection").scrollIntoView({ behavior: "smooth" });
-  });
-
-  document.querySelectorAll("[data-faq-link]").forEach(link => {
-    link.addEventListener("click", (e) => {
-      e.preventDefault();
-      document.querySelector(".faq").scrollIntoView({ behavior: "smooth" });
-    });
-  });
-
-  document.getElementById("contactWhatsapp").addEventListener("click", (e) => {
-    e.preventDefault();
-    const msg = encodeURIComponent("Hello AUREVAN, I'd like to ask about a watch.");
-    window.open(`https://wa.me/${STORE_CONFIG.whatsappNumber}?text=${msg}`, "_blank", "noopener");
-  });
-}
-
-/* =============================================================
-   Hero swiper
-============================================================= */
-function initHeroSwiper() {
-  new Swiper("#heroSwiper", {
-    loop: true,
-    speed: 1100,
-    autoplay: { delay: 4200, disableOnInteraction: false, pauseOnMouseEnter: true },
-    effect: "fade",
-    fadeEffect: { crossFade: true },
-    pagination: { el: "#heroPagination", clickable: true },
-    a11y: { enabled: true }
-  });
-}
-
-/* =============================================================
-   Scroll reveals + GSAP entrance
-============================================================= */
-function observeReveals() {
-  const items = document.querySelectorAll(".reveal:not(.is-visible)");
-  if (!("IntersectionObserver" in window)) {
-    items.forEach(el => el.classList.add("is-visible"));
+  if (cart.length === 0) {
+    itemsList.innerHTML = `<p style="text-align: center; color: var(--text-muted); margin-top: 2rem;">Your shopping bag is empty.</p>`;
+    subtotalEl.textContent = `${STORE_CONFIG.currencySymbol}0.00`;
+    totalEl.textContent = `${STORE_CONFIG.currencySymbol}0.00`;
     return;
   }
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("is-visible");
-        io.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.15 });
-  items.forEach(el => io.observe(el));
+
+  itemsList.innerHTML = cart.map(item => `
+    <div class="cart-item">
+      <img src="${item.watch.image}" alt="${item.watch.name}" class="cart-item-img">
+      <div class="cart-item-details">
+        <h4 class="cart-item-title">${item.watch.name}</h4>
+        <div class="cart-item-price">${STORE_CONFIG.currencySymbol}${item.watch.price.toLocaleString()} x ${item.quantity}</div>
+      </div>
+      <button onclick="removeFromCart('${item.watch.id}')" style="color: var(--text-muted); font-size: 1.2rem;">&times;</button>
+    </div>
+  `).join('');
+
+  const subtotal = cart.reduce((sum, item) => sum + (item.watch.price * item.quantity), 0);
+  subtotalEl.textContent = `${STORE_CONFIG.currencySymbol}${subtotal.toLocaleString()}`;
+  totalEl.textContent = `${STORE_CONFIG.currencySymbol}${subtotal.toLocaleString()}`;
 }
 
-function markReveals() {
-  document.querySelectorAll(".craft__item, .why__item, .contact__panel").forEach(el => el.classList.add("reveal"));
+// Remove Item from Cart
+function removeFromCart(watchId) {
+  cart = cart.filter(item => item.watch.id !== watchId);
+  updateCartUI();
 }
 
-function heroEntrance() {
-  if (typeof gsap === "undefined") {
-    document.querySelectorAll(".hero__eyebrow, .hero__title, .hero__tagline, .hero__support, .hero__ctas")
-      .forEach(el => el.style.opacity = 1);
-    return;
-  }
-  const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
-  tl.to(".hero__eyebrow", { opacity: 1, y: 0, duration: 0.7 }, 0.2)
-    .fromTo(".hero__title", { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 1 }, 0.35)
-    .fromTo(".hero__tagline", { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.8 }, 0.7)
-    .fromTo(".hero__support", { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.8 }, 0.85)
-    .fromTo(".hero__ctas", { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.8 }, 1.0);
+// Open Checkout Modal
+function openCheckoutModal() {
+  const preview = document.getElementById('checkoutItemsPreview');
+  const grandTotalEl = document.getElementById('checkoutGrandTotal');
+
+  const subtotal = cart.reduce((sum, item) => sum + (item.watch.price * item.quantity), 0);
+
+  preview.innerHTML = cart.map(item => `
+    <div class="summary-line">
+      <span>${item.quantity}x ${item.watch.name}</span>
+      <span>${STORE_CONFIG.currencySymbol}${(item.watch.price * item.quantity).toLocaleString()}</span>
+    </div>
+  `).join('');
+
+  grandTotalEl.textContent = `${STORE_CONFIG.currencySymbol}${subtotal.toLocaleString()}`;
+  document.getElementById('checkoutModal').classList.add('active');
 }
 
-function initParallax() {
-  if (typeof gsap === "undefined" || !window.ScrollTrigger) return;
-  gsap.registerPlugin(ScrollTrigger);
-  gsap.to("#featuredImg", {
-    yPercent: 12,
-    ease: "none",
-    scrollTrigger: {
-      trigger: ".featured",
-      start: "top bottom",
-      end: "bottom top",
-      scrub: true
-    }
+// ==================== WHATSAPP CHECKOUT GENERATOR ====================
+function handleCheckoutSubmit(e) {
+  e.preventDefault();
+
+  const fullName = document.getElementById('fullName').value.trim();
+  const phoneNumber = document.getElementById('phoneNumber').value.trim();
+  const cityName = document.getElementById('cityName').value.trim();
+  const deliveryAddress = document.getElementById('deliveryAddress').value.trim();
+  const mapsLink = document.getElementById('mapsLink').value.trim();
+  const orderNotes = document.getElementById('orderNotes').value.trim();
+
+  const subtotal = cart.reduce((sum, item) => sum + (item.watch.price * item.quantity), 0);
+
+  let itemsFormatted = "";
+  cart.forEach(item => {
+    itemsFormatted += `• ${item.quantity}x ${item.watch.name} — ${STORE_CONFIG.currencySymbol}${(item.watch.price * item.quantity).toLocaleString()}\n`;
   });
+
+  // URL-Encoded WhatsApp Message Structure
+  let message = `👑 *AUREVAN SWITZERLAND — NEW DISPATCH ORDER*\n`;
+  message += `----------------------------------\n`;
+  message += `👤 *Customer Name:* ${fullName}\n`;
+  message += `📞 *Phone Number:* ${phoneNumber}\n`;
+  message += `🏙️ *City:* ${cityName}\n`;
+  message += `📍 *Delivery Address:* ${deliveryAddress}\n`;
+  if (mapsLink) message += `🗺️ *Google Maps:* ${mapsLink}\n`;
+  message += `----------------------------------\n`;
+  message += `⌚ *TIMEPIECES ORDERED:*\n${itemsFormatted}\n`;
+  message += `----------------------------------\n`;
+  message += `🚚 *Courier Delivery:* FREE\n`;
+  message += `💰 *TOTAL PAYABLE (COD):* ${STORE_CONFIG.currencySymbol}${subtotal.toLocaleString()}\n`;
+  message += `💳 *Payment Method:* Cash on Delivery (COD)\n`;
+  if (orderNotes) message += `📝 *Notes:* ${orderNotes}\n`;
+  message += `----------------------------------\n`;
+  message += `_Please process this order for immediate atelier dispatch._`;
+
+  const encodedText = encodeURIComponent(message);
+  const whatsappURL = `https://wa.me/${STORE_CONFIG.whatsappNumber}?text=${encodedText}`;
+
+  // Open WhatsApp in new tab
+  window.open(whatsappURL, '_blank');
+
+  // Close Checkout Modal & Open Confirmation Modal
+  document.getElementById('checkoutModal').classList.remove('active');
+  document.getElementById('whatsappPromptModal').classList.add('active');
+
+  // Reset Cart State
+  cart = [];
+  updateCartUI();
+  document.getElementById('checkoutForm').reset();
 }
 
-/* =============================================================
-   Init
-============================================================= */
-document.addEventListener("DOMContentLoaded", () => {
-  document.getElementById("year").textContent = new Date().getFullYear();
+// Open General Contact Consultation
+function openGeneralWhatsapp() {
+  const text = encodeURIComponent("Hello AUREVAN Concierge, I would like to inquire regarding your watch repertoire.");
+  window.open(`https://wa.me/${STORE_CONFIG.whatsappNumber}?text=${text}`, '_blank');
+}
 
-  renderHero();
-  renderCollection();
-  renderFeatured();
-  renderReviews();
-  renderFAQ();
-  markReveals();
-
-  initNav();
-  initFilters();
-  initProductModal();
-  initCheckout();
-  initModalDismiss();
-  initHeroSwiper();
-  heroEntrance();
-  initParallax();
-  observeReveals();
-});
+// Dynamically Inject Configured Phone Links
+function updateContactLinks() {
+  const link = document.getElementById('contactWhatsappLink');
+  if (link) {
+    link.href = `https://wa.me/${STORE_CONFIG.whatsappNumber}`;
+    link.textContent = `+${STORE_CONFIG.whatsappNumber}`;
+  }
+}
